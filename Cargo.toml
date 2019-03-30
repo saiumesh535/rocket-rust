@@ -5,3 +5,4 @@ authors = ["saiumesh"]
 edition = "2018"
 
 [dependencies]
+rocket = "0.4.0"
