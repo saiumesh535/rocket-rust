@@ -13,7 +13,7 @@ pub struct FormError {
     username: String,
 }
 
-#[post("/login", data = "<user>")]
+#[post("/formlogin", data = "<user>")]
 pub fn user_login(user: Form<UserLogin>) -> String {
     format!("Welcome to Rocket-Crud Example {}", user.username)
 }
