@@ -2,7 +2,7 @@ use rocket_contrib::json::{Json};
 
 #[derive(Serialize, Deserialize)]
 pub struct JsonResponse {
-    username: String
+    pub username: String
 }
 
 #[get("/json")]
