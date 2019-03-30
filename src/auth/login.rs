@@ -13,7 +13,7 @@ pub fn login_handler(user_login: Form<UserLogin>, state: State<PgState>) -> Stri
     let conn = state.connection.lock().unwrap();
     // conn.execute("INSERT INTO users (username, password) VALUES ($1, $2)",
     //              &[&user_login.username, &user_login.password]).unwrap();
-    let users = &conn.query("SELECT username,password FROM users WHERE username=$1", &[&user_login.username]).unwrap();
+    let users = conn.query("SELECT username,password FROM users WHERE username=$1", &[&user_login.username]).unwrap();
     if users.len() == 0 {
         return format!("hey!! check username or password");
     }
