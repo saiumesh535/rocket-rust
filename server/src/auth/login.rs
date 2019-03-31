@@ -17,7 +17,6 @@ pub struct UserLoginToken {
 
 #[post("/login", data = "<user_login>")]
 pub fn login_handler(user_login: Form<UserLogin>, state: State<PgState>) -> Result<Json<UserLoginToken>, String> {
-    println!("hey!! {}", user_login.username);
     let conn = state.connection.lock().unwrap();
     // conn.execute("INSERT INTO users (username, password) VALUES ($1, $2)",
     //              &[&user_login.username, &user_login.password]).unwrap();

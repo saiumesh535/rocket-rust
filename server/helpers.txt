@@ -4,3 +4,7 @@
 fn print_type_of<T>(_: &T) {
     println!("{}", unsafe { std::intrinsics::type_name::<T>() });
 }
+
+
+// retrieving through database results
+https://stackoverflow.com/questions/50936699/type-annotations-required-for-format-when-parsing-postgres-results

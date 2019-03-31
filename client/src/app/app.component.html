@@ -1,4 +1,4 @@
-<h1 class="title" >Welcome to Rust + Angular</h1>
+<h1 class="title">Welcome to Rust + Angular</h1>
 
 <div class="container">
   <form>
@@ -16,6 +16,9 @@
     </textarea>
     <button (click)="copyToken(tokenArea)">Copy</button>
     <h2>Get All users</h2>
-    <button (click)="getUsers()" >Get</button>
+    <button (click)="getUsers()">Get</button>
+  </div>
+  <div *ngFor="let user of (users | async)">
+    <p>Username: {{user.username}}</p>
   </div>
 </div>
