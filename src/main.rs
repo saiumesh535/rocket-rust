@@ -13,6 +13,7 @@ mod form_example;
 mod auth;
 mod state;
 mod database;
+mod helpers;
 
 use error_handlers::handlers;
 use auth::login;
