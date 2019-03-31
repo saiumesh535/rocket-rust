@@ -16,6 +16,15 @@ I really like [VSCode](https://code.visualstudio.com/) and it has very good exte
 1. [Rust(rls)](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
 2. [Rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust)
 
+## Missing nodemon 😁
+restart rocket on save using [cargo-watch](https://github.com/passcod/cargo-watch)
+
+```
+cd server
+cargo install cargo-watch
+cargo watch -x run
+```
+
 ## Installtion and start server 🚀🚀
 
 This respository has Two project as below
