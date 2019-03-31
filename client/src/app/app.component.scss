@@ -1,5 +1,11 @@
 .container {
     padding: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
   }
 
   /* Full-width input fields */

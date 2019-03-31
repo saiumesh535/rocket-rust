@@ -1,4 +1,5 @@
 #![feature(proc_macro_hygiene, decl_macro)]
+#![feature(core_intrinsics)]
 
 #[macro_use]
 extern crate rocket;
@@ -14,6 +15,7 @@ mod auth;
 mod state;
 mod database;
 mod helpers;
+mod users;
 
 use rocket_cors;
 use rocket::http::Method;
@@ -23,8 +25,9 @@ use state::test_state::MyConfig;
 use database::postgres_sql;
 use state::pg_state::PgState;
 use std::{sync::Mutex};
-use rocket_cors::{AllowedHeaders, AllowedOrigins, Cors, CorsOptions};
+use rocket_cors::{AllowedHeaders, AllowedOrigins, CorsOptions};
 use rocket::response::Responder;
+use users::get_users;
 
 fn cors_options() -> CorsOptions {
     // let allowed_origins = AllowedOrigins::all();
@@ -76,6 +79,7 @@ fn main() {
             form_example::form_error,
             login::login_handler,
             login_options,
+            get_users::get_all_users
         ])
         .manage(lol)
         .manage(pg_conn)

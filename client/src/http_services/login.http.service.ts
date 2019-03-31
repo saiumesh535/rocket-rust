@@ -9,7 +9,7 @@ export interface Login {
     password: string;
 }
 
-const BASE_URL = 'http://localhost:8000/';
+export const BASE_URL = 'http://localhost:8000/';
 
 @Injectable()
 export class LoginHttpService {
