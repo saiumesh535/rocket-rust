@@ -10,6 +10,7 @@ serde = "1.0.89"
 serde_derive = "1.0.89"
 serde_json = "1.0.39"
 postgres = "0.15.2"
+jsonwebtoken = "5.0.1"
 
 [dependencies.rocket_contrib]
 default-features = false
