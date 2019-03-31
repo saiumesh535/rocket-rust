@@ -7,7 +7,7 @@ Rust is probably one of the most fascinating programming languages, it is as per
 
 This repository would give basic exmaples to build your APIs using rocket.
 
-##Before you start
+## Before you start
 Before starting with this project, I strongly recommend you to learn basics of rus tfrom their official [docs](https://doc.rust-lang.org/book/) they are pretty good.
 
 ## Configuration
