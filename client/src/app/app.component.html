@@ -1,0 +1,22 @@
+<div class="container">
+  <form>
+    <p>username & password should be more than 3</p>
+    <label for="uname"><b>Username</b></label>
+    <input [(ngModel)]="username" type="text" placeholder="Enter Username" name="uname" required>
+    <label for="psw"><b>Password</b></label>
+    <input [(ngModel)]="password" type="password" placeholder="Enter Password" name="psw" required>
+    <button (click)="login()" [disabled]="username.length < 3 || password.length < 3" type="submit">Login</button>
+  </form>
+
+  <div *ngIf="!(token.length === 0)">
+    <textarea #tokenArea rows="4" cols="50">
+    {{token}}
+    </textarea>
+    <button (click)="copyToken(tokenArea)">Copy</button>
+    <h2>Get All users</h2>
+    <button (click)="getUsers()" >Get</button>
+  </div>
+
+
+
+</div>
