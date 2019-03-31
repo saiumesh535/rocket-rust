@@ -25,10 +25,10 @@ This respository has Two project as below
 | 1             |  server       |  Server with Rust      |
 | 2             |  client        | Web app with  Angular  |
 
-##Notice
+## Notice
 Since we are using Rocket framework for our server, it's uses latest rust nightly version. for more information please visit [here](https://rocket.rs/v0.4/guide/getting-started/#installing-rust)
 
-#TL;DR
+# TL;DR
 
 setup your server with following commands
 ```
