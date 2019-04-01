@@ -1,6 +1,6 @@
 [development]
 address = "localhost"
-port = 8080
+port = 8000
 workers = 16
 log = "normal"
 limits = { forms = 32768 }
