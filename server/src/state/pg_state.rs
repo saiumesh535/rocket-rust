@@ -1,6 +1,6 @@
 use postgres::{Connection};
-use std::{sync::Mutex};
+use std::sync::{Arc, Mutex};
 
 pub struct PgState {
-    pub connection: Mutex<Connection>
+    pub connection: Arc<Mutex<Connection>>
 }

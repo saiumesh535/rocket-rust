@@ -24,7 +24,7 @@ use auth::login;
 use state::test_state::MyConfig;
 use database::postgres_sql;
 use state::pg_state::PgState;
-use std::{sync::Mutex};
+use std::sync::{Arc, Mutex};
 use rocket_cors::{AllowedHeaders, AllowedOrigins, CorsOptions};
 use rocket::response::Responder;
 use users::get_users;
@@ -68,7 +68,7 @@ fn main() {
     };
 
     let pg_conn = PgState {
-        connection: Mutex::new(postgres_sql::connect_pg())
+        connection: Arc::new(Mutex::new(postgres_sql::connect_pg()))
     };
 
     rocket::ignite()
