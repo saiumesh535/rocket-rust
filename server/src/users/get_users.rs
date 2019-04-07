@@ -1,5 +1,6 @@
 use crate::state::pg_state::PgState;
 use rocket_contrib::json::{Json};
+use crate::gaurds::authorization::ApiKey;
 
 use rocket::State;
 
@@ -14,7 +15,7 @@ pub struct UserResponse {
 }
 
 #[get("/users")]
-pub fn get_all_users(state: State<PgState>) -> Json<UserResponse> {
+pub fn get_all_users(state: State<PgState>, _api: ApiKey) -> Json<UserResponse> {
     let mut users_data: Vec<Users> = Vec::new();
     let conn = state.connection.lock().unwrap();
     let lol = conn.query("SELECT username,password FROM users", &[]).unwrap();

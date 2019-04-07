@@ -10,6 +10,11 @@ pub struct UserLogin {
     pub password: String,
 }
 
+#[derive(FromForm, Debug, Serialize, Deserialize)]
+pub struct UserLoginTokenInput {
+    pub username: String
+}
+
 #[derive(Serialize, Deserialize)]
 pub struct UserLoginToken {
     pub token: String
@@ -24,9 +29,8 @@ pub fn login_handler(user_login: Form<UserLogin>, state: State<PgState>) -> Resu
     if users.len() == 0 {
         return Err(format!("hey!! check username or password"));
     }
-    let jwt_claims = UserLogin {
-        username: user_login.username.to_owned(),
-        password: user_login.password.to_owned(),
+    let jwt_claims = UserLoginTokenInput {
+        username: user_login.username.to_owned()
     };
     let token = encode_jwt(jwt_claims);
     if token.is_ok() {

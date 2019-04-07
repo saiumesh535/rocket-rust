@@ -8,3 +8,7 @@ fn print_type_of<T>(_: &T) {
 
 // retrieving through database results
 https://stackoverflow.com/questions/50936699/type-annotations-required-for-format-when-parsing-postgres-results
+
+
+// custom error handling
+https://api.rocket.rs/rocket/struct.Catcher.html

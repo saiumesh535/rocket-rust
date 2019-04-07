@@ -16,6 +16,7 @@ mod state;
 mod database;
 mod helpers;
 mod users;
+mod gaurds;
 
 use rocket_cors;
 use rocket::http::Method;
